@@ -1,0 +1,56 @@
+spring:
+  main:
+    lazy-initialization: true
+  datasource:
+    url: jdbc:postgresql://143.244.183.66:5432/visitors_db
+    username: admin
+    password: Admin1234*
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: update
+app:
+  jwt:
+    public-key: |
+      -----BEGIN PUBLIC KEY-----
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm4J9frif4xmMqst2MOoQ
+      156xfp2vNivgIUiljo/2ytLz4CR45Izes/MjC8hxcJKf69sl30LLfJ72xyMrgJBH
+      NHvO+m7lB6jUK+FmpdP6GV3vEjpVG/UllU+iwu9NexGmUn31g2bYIRl/UY6XPSO+
+      ImZu42fmJwbFy2ejGSj8WwchSrvZW+day0MDsDQqeran8hQqazYFjdRCClZG6E+2
+      KYlFgZQU57YQ6gVq2yc4NvKl68/RF+gSD+UtJeOoWNtfiNiPRO39Z+lnQLL+JTQv
+      gD/9URjeqr96eNxlZ04Mz2McvSICPGOIbKddgMv+0EflIY5rW5Bq9n3Yv9n4QvFI
+      EwIDAQAB
+      -----END PUBLIC KEY-----
+    private-key: |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIIEpQIBAAKCAQEAm4J9frif4xmMqst2MOoQ156xfp2vNivgIUiljo/2ytLz4CR4
+      5Izes/MjC8hxcJKf69sl30LLfJ72xyMrgJBHNHvO+m7lB6jUK+FmpdP6GV3vEjpV
+      G/UllU+iwu9NexGmUn31g2bYIRl/UY6XPSO+ImZu42fmJwbFy2ejGSj8WwchSrvZ
+      W+day0MDsDQqeran8hQqazYFjdRCClZG6E+2KYlFgZQU57YQ6gVq2yc4NvKl68/R
+      F+gSD+UtJeOoWNtfiNiPRO39Z+lnQLL+JTQvgD/9URjeqr96eNxlZ04Mz2McvSIC
+      PGOIbKddgMv+0EflIY5rW5Bq9n3Yv9n4QvFIEwIDAQABAoIBAQCKYelo7cQh5CeA
+      CQRI7NFF/sq2AH3dN9f/5lSk80lLHcO1Lt+BijXXbkI+hwUjhubWjDI8ZYUMhazW
+      cl6QzlL+yjnaMvqOAVelILQmVubU0fkfgFciRNlH8BDHZQnOvVsDR2FFqCwl8DmT
+      Cs9cscTNedetd1SgX+99XOEPT6CZIvDIn6dMTMbr5nRj6K8s5051j0kxYJoUnUrl
+      e4RbI6JszXXOql2cbOVMQyb7zWXua0Nqc14tiQAvLB3g1sOibtIMvMZVMVdYycpX
+      vpeJFHR8TbaExPiK7648PuIDmaCJb7WEPcdJMN01JbkYrLRdJSAddzwDDW3TVvaL
+      QUkCsm0ZAoGBAM9K/5wyYuFTq9leWDcWohFfvpGk2n5fCg/YbFSQoAHAa2VKhpcH
+      3Y7jbVhHBn6RGI1pAmV/PHgYXVFMvRK5mR4K9u39uDbe1vVu9Mf5VjRV3IPuddxI
+      9ryO90dTRQ0Z40tzNqwGwypJGo24pjU9qn8iKxoJ/21pHZ0xGekm8ESfAoGBAMAM
+      pdJBwJ25Af60/YW9Qijw0XypHVVfWdPbpYn/ZtjkHX3Db/WIZJU2VFo0agrTktx5
+      lulIAD1QVh1zpoFsqWW2cVnpT/82yrZ3eXtL7v0QHrqHrKpIN8S9aOXlvBUzT1oD
+      bdI4u9CAm0ZD+MM4t5BhqFNDEL9SOe73TtyowrQNAoGBAMdvo79WptWdV7A5Wewe
+      ZW0LzeB4WBLPQ3H9SjSONLOaunjom9cBJUPNQa12ICRzWsjqp/iY0sfEwTtv9lTm
+      pg9Gg050FeEMwom959nh5PNTTGbObSy0Mlc1wWkpDz1Mk+dKgOY/V1P+o4KIjbiZ
+      jMjmScuypMJSKMDMtd4grXeHAoGAAWIV76W5lWk3snXrPYNXbqQNXjB5nZvKMdRr
+      JMtKGlXKQJWfwMzyrIBvqxaljN5pOF1H0PZLyiVB+YRTtqrprWna9yLPCK+EVjwW
+      C+VIG1p6Xi2L+M38WNZkYwN8j0qHT8ami9UMxTun4qGqsP0/lTKe27qn7DjTYf01
+      /DDa9iECgYEAgMQgTivtZArYQo+dHm57GASwbTxbQ/JU0SMlSPkIPjaFeOySXKcx
+      yuXoX92eA6pkO0kkooWug6qyidhvOuTiYuIiKxuJY5z/GQSGk6Eak9ZZ37HL55nO
+      q8B6q7oUkmQAW76l5I7E3Q91YnS5mEUa6GIx9YDmONGlaFWJ0gKvrL0=
+      -----END RSA PRIVATE KEY-----

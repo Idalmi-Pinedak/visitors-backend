@@ -1,0 +1,6 @@
+.idea
+.git
+.gitignore
+#target
+mvnw.cmd
+build-image.sh

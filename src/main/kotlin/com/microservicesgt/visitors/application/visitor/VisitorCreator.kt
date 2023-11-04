@@ -21,12 +21,12 @@ class VisitorCreator(
         val visitors = visitorGroup.visitors ?: listOf()
         val survey = visitorGroup.survey ?: listOf()
 
-        val entranceFee = 10.0
+        val total = visitors.map { it.entranceFee ?: 0.0 }.reduce { acc, d -> acc + d }
 
         val visitorGroupEntity = VisitorGroup().apply {
             this.checkInDate = LocalDateTime.now()
             this.totalVisitors = visitors.size
-            this.totalAmount = visitors.size * entranceFee
+            this.totalAmount = total
         }
 
         visitorGroupRepository.save(visitorGroupEntity)
@@ -35,7 +35,7 @@ class VisitorCreator(
             return@map Visitor().apply {
                 this.visitorName = it.visitorName
                 this.age = it.age
-                this.entranceFee = entranceFee
+                this.entranceFee = it.entranceFee
                 this.genderId = it.genderId
                 this.countryId = it.countryId
                 this.stateId = it.stateId

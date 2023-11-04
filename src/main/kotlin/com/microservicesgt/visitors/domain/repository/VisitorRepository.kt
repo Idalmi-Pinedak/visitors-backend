@@ -91,6 +91,21 @@ interface VisitorRepository : JpaRepository<Visitor, Long> {
 
     @Query(
         value = """
+            select t1.country_name, count(t0.id)
+            from visitor.visitor as t0
+                     join visitor.country as t1 on t1.id = t0.country_id
+            where extract('year' from t0.created_at) = :year
+            group by t1.country_name
+            order by count(t0.id) desc;
+        """,
+        nativeQuery = true
+    )
+    fun countByCountry(
+        @Param(value = "year") year: Int
+    ): List<Array<*>>
+
+    @Query(
+        value = """
             from Visitor as t0
             where t0.checkInDate between :startDate and :endDate 
             order by t0.checkInDate desc

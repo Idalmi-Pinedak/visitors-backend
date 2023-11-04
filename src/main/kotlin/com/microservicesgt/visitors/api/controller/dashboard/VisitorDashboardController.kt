@@ -102,4 +102,27 @@ class VisitorDashboardController(
         return ResponseEntity.ok(data)
     }
 
+    @GetMapping(value = ["/api/dashboard/visitors-by-country"])
+    fun visitorsByCountry(
+        @RequestParam(value = "yearToSearch", defaultValue = "current") yearToSearch: String,
+    ): ResponseEntity<List<DashboardResponseJsonDto>> {
+        val currentDate = LocalDate.now()
+
+        val year = when {
+            yearToSearch == "current" -> currentDate.year
+            else -> currentDate.minusYears(1).year
+        }
+
+        val data = visitorRepository
+            .countByCountry(year)
+            .map {
+                return@map DashboardResponseJsonDto().apply {
+                    this.countryName = it[0].toString()
+                    this.count = it[1].toString().toInt()
+                }
+            }
+
+        return ResponseEntity.ok(data)
+    }
+
 }
